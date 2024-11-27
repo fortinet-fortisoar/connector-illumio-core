@@ -1,0 +1,1232 @@
+{
+  "name": "illumio-core",
+  "version": "1.0.0",
+  "label": "Illumio Core",
+  "description": "Illumio is a cybersecurity company that specializes in micro-segmentation and zero-trust security solutions for data centers and cloud environments. It provides a platform designed to help organizations protect their critical applications and data by creating secure zones and controlling access between workloads, regardless of whether those workloads are on-premises or in the cloud.",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "contributor": "",
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "category": [
+    "Network Security",
+    "Cloud Security",
+    "Endpoint Security"
+  ],
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "description": "Specify the URL of the Illumio server to connect and perform automated operations.",
+        "type": "text",
+        "name": "server_url",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "tooltip": "Specify the URL of the Illumio server to connect and perform automated operations."
+      },
+      {
+        "title": "API Key",
+        "description": "Specify the API Key to access the endpoint to connect and perform the automated operations",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "api_key",
+        "tooltip": "Specify the API Key to access the endpoint to connect and perform the automated operations"
+      },
+      {
+        "title": "API Token",
+        "description": "Specify the API Token to access the endpoint to connect and perform the automated operations",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "api_token",
+        "tooltip": "Specify the API Token to access the endpoint to connect and perform the automated operations"
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "create_workload",
+      "title": "Create Workload",
+      "description": "Creates an workload in Illumio based on the organization ID, workload name, and other input parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "create_workload",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to create workload in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to create workload in Illumio."
+        },
+        {
+          "title": "Workload Name",
+          "description": "Specify the name of the workload to create in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name",
+          "tooltip": "Specify the name of the workload to create in Illumio."
+        },
+        {
+          "title": "Description",
+          "description": "Specify the description of the workload to create in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "description",
+          "tooltip": "Specify the description of the workload to create in Illumio."
+        },
+        {
+          "title": "Hostname",
+          "description": "Specify the hostname of the workload to create in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "hostname",
+          "tooltip": "Specify the hostname of the workload to create in Illumio."
+        },
+        {
+          "title": "Service Principal Name",
+          "description": "Specify the principal name of the service based on which you want to create workload in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "service_principal_name",
+          "tooltip": "Specify the principal name of the service based on which you want to create workload in Illumio."
+        },
+        {
+          "title": "Public IP",
+          "description": "Specify the public IP based on which you want to create workload in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "public_ip",
+          "tooltip": "Specify the public IP based on which you want to create workload in Illumio."
+        },
+        {
+          "title": "Additional Properties",
+          "description": "Additional fields, in the JSON format, based on which you want to create workload in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "additional_properties",
+          "tooltip": "Additional fields, in the JSON format, based on which you want to create workload in Illumio.",
+          "value": {
+            "external_data_set": "",
+            "external_data_reference": "",
+            "agent_to_pce_certificate_authentication_id": "",
+            "distinguished_name": ""
+          }
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_workloads",
+      "title": "Get Workloads",
+      "description": "Retrieve a list of workloads from Illumio based on the organization ID and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_workloads",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve workloads from Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to retrieve workloads from Illumio."
+        },
+        {
+          "title": "Enforcement Mode",
+          "description": "Select a enforcement mode of the workload based on which you want to retrieve workloads from Illumio. You can choose from the following options: Visibility Only, Full, Idle, or Selective.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "enforcement_mode",
+          "tooltip": "Select a enforcement mode of the workload based on which you want to retrieve workloads from Illumio. You can choose from the following options: Visibility Only, Full, Idle, or Selective.",
+          "options": [
+            "Visibility Only",
+            "Full",
+            "Idle",
+            "Selective"
+          ]
+        },
+        {
+          "title": "Included Deleted",
+          "description": "Select the option, if you want to include deleted workloads in the records from Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "include_deleted",
+          "tooltip": "Select the option, if you want to include deleted workloads in the records from Illumio."
+        },
+        {
+          "title": "Security Policy Sync State",
+          "description": "Select a security policy sync state of the workload based on which you want to retrieve workloads from Illumio. You can select the option as Staged.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "security_policy_sync_state",
+          "tooltip": "Select a security policy sync state of the workload based on which you want to retrieve workloads from Illumio. You can select the option as Staged.",
+          "options": [
+            "Staged"
+          ]
+        },
+        {
+          "title": "Security Policy Update Mode",
+          "description": "Select a security policy update mode of the workload based on which you want to retrieve workloads from Illumio. You can choose from the following options: Static or Adaptive.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "security_policy_update_mode",
+          "tooltip": "Select a security policy update mode of the workload based on which you want to retrieve workloads from Illumio. You can choose from the following options: Static or Adaptive.",
+          "options": [
+            "Static",
+            "Adaptive"
+          ]
+        },
+        {
+          "title": "Visibility Level",
+          "description": "Select a visibility level of the workload based on which you want to retrieve workloads from Illumio. You can choose from the following options: Flow Full Detail, Flow Summary, Flow Drops, Flow Off, or Enhanced Data Collection.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "visibility_level",
+          "tooltip": "Select a visibility level of the workload based on which you want to retrieve workloads from Illumio. You can choose from the following options: Flow Full Detail, Flow Summary, Flow Drops, Flow Off, or Enhanced Data Collection.",
+          "options": [
+            "Flow Full Detail",
+            "Flow Summary",
+            "Flow Drops",
+            "Flow Off",
+            "Enhanced Data Collection"
+          ]
+        },
+        {
+          "title": "Policy Health",
+          "description": "Select a policy health of the workload based on which you want to retrieve workloads from Illumio. You can choose from the following options: Active, Warning, Error, or Suspended.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "policy_health",
+          "tooltip": "Select a policy health of the workload based on which you want to retrieve workloads from Illumio. You can choose from the following options: Active, Warning, Error, or Suspended.",
+          "options": [
+            "Active",
+            "Warning",
+            "Error",
+            "Suspended"
+          ]
+        },
+        {
+          "title": "Limit",
+          "description": "Maximum number of workload that this operation should return from Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "max_results",
+          "tooltip": "Maximum number of workload that this operation should return from Illumio."
+        },
+        {
+          "title": "Additional Properties",
+          "description": "Additional fields, in the JSON format, based on which you want to retrieve details from Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "additional_properties",
+          "tooltip": "Additional fields, in the JSON format, based on which you want to retrieve details from Illumio.",
+          "value": {
+            "container_clusters": "",
+            "description": "",
+            "external_data_reference": "",
+            "external_data_set": "",
+            "hostname": "",
+            "ip_address": ""
+          }
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_workload_by_id",
+      "title": "Get Workload by ID",
+      "description": "Retrieves a specific workload from Illumio based on the organization ID and workload ID that you have specified.",
+      "category": "investigation",
+      "annotation": "get_workload_by_id",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve workload from Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to retrieve workload from Illumio."
+        },
+        {
+          "title": "Workload ID",
+          "name": "workload_id",
+          "description": "Specify the ID of the workload to retrieve its details from Illumio.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the workload to retrieve its details from Illumio."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "update_workload",
+      "title": "Update Workload",
+      "description": "Updates an workload in Illumio based on the organization ID, workload ID, and other input parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "update_workload",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to update workload in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to update workload in Illumio."
+        },
+        {
+          "title": "Workload ID",
+          "name": "workload_id",
+          "description": "Specify the ID of the workload which you want to update in Illumio.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the workload which you want to update in Illumio."
+        },
+        {
+          "title": "Workload Name",
+          "description": "Specify the name of the workload which you want to update in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name",
+          "tooltip": "Specify the name of the workload which you want to update in Illumio."
+        },
+        {
+          "title": "Description",
+          "description": "Specify the description of the workload which you want to update in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "description",
+          "tooltip": "Specify the description of the workload which you want to update in Illumio."
+        },
+        {
+          "title": "Service Provider",
+          "description": "Specify the service provider of the workload which you want to update in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "service_provider",
+          "tooltip": "Specify the service provider of the workload which you want to update in Illumio."
+        },
+        {
+          "title": "Enforcement Mode",
+          "description": "Select a enforcement mode of the workload based on which you want to update workload in Illumio. You can choose from the following options: Visibility Only, Full, Idle, or Selective.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "enforcement_mode",
+          "tooltip": "Select a enforcement mode of the workload based on which you want to update workload in Illumio. You can choose from the following options: Visibility Only, Full, Idle, or Selective.",
+          "options": [
+            "Visibility Only",
+            "Full",
+            "Idle",
+            "Selective"
+          ]
+        },
+        {
+          "title": "Additional Properties",
+          "description": "Additional fields, in the JSON format, based on which you want to update workload in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "additional_properties",
+          "tooltip": "Additional fields, in the JSON format, based on which you want to update workload in Illumio.",
+          "value": {
+            "labels": [],
+            "service_provider": ""
+          }
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "delete_workload",
+      "title": "Delete Workload",
+      "description": "Delete an workload in Illumio based on the organization ID and workload ID that you have specified.",
+      "category": "investigation",
+      "annotation": "delete_workload",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to delete workload in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to delete workload in Illumio."
+        },
+        {
+          "title": "Workload ID",
+          "name": "workload_id",
+          "description": "Specify the ID of the workload which you want to delete in Illumio.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the workload which you want to delete in Illumio."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_ransomware_details",
+      "title": "Get Ransomware Details",
+      "description": "Retrieve a specific ransomware details for the workload from Illumio based on the organization ID and workload ID that you have specified.",
+      "category": "investigation",
+      "annotation": "get_ransomware_details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve ransomware details from Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to retrieve ransomware details from Illumio."
+        },
+        {
+          "title": "Workload ID",
+          "name": "workload_id",
+          "description": "Specify the ID of the workload based on which you want to retrieve ransomware details from Illumio.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the workload based on which you want to retrieve ransomware details from Illumio."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "create_ip_list",
+      "title": "Create IP List",
+      "description": "Creates an IP list in Illumio based on the organization ID, security policy version, IP list name, and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "create_ip_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to create IP list in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to create IP list in Illumio."
+        },
+        {
+          "title": "Security Policy Version",
+          "description": "Specify the security policy version based on which you want to create IP list in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pversion",
+          "tooltip": "Specify the security policy version based on which you want to create IP list in Illumio."
+        },
+        {
+          "title": "IP List Name",
+          "description": "Specify the name of the IP list based on which you want to create IP list in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name",
+          "tooltip": "Specify the name of the IP list based on which you want to create IP list in Illumio."
+        },
+        {
+          "title": "IP Ranges",
+          "description": "Specify the IP addresses or ranges, in the JSON format, based on which you want to create IP list in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "ip_ranges",
+          "tooltip": "Specify the IP addresses or ranges, in the JSON format, based on which you want to create IP list in Illumio",
+          "value": [
+            {
+              "from_ip": "required",
+              "description": "",
+              "to_ip": "",
+              "exclusion": ""
+            }
+          ]
+        },
+        {
+          "title": "Fully Qualified Domain Name (FQDN)",
+          "description": "Specify the fully qualified domain name (FQDN), in the JSON format, based on which you want to create IP list in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "fqdns",
+          "tooltip": "Specify the fully qualified domain name (FQDN), in the JSON format, based on which you want to create IP list in Illumio",
+          "value": [
+            {
+              "fqdn": "required",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "title": "Description",
+          "description": "Specify the description based on which you want to create IP list in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "description",
+          "tooltip": "Specify the description based on which you want to create IP list in Illumio."
+        },
+        {
+          "title": "Additional Properties",
+          "description": "Additional fields, in the JSON format, based on which you want to create IP list in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "additional_properties",
+          "tooltip": "Additional fields, in the JSON format, based on which you want to create IP list in Illumio.",
+          "value": {
+            "external_data_set": "",
+            "external_data_reference": ""
+          }
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_ip_list",
+      "title": "Get IP List",
+      "description": "Retrieve a IP list from Illumio based on the organization ID, security policy version, and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_ip_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve IP list from Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to retrieve IP list from Illumio."
+        },
+        {
+          "title": "Security Policy Version",
+          "description": "Specify the security policy version based on which you want to retrieve IP list from Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pversion",
+          "tooltip": "Specify the security policy version based on which you want to retrieve IP list from Illumio."
+        },
+        {
+          "title": "Description",
+          "description": "Specify the description based on which you want to retrieve IP list from Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "description",
+          "tooltip": "Specify the description based on which you want to retrieve IP list from Illumio. Note: Supports partial matches."
+        },
+        {
+          "title": "External Data Reference",
+          "description": "Specify a unique identifier within the external data source based on which you want to retrieve IP list from Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "external_data_reference",
+          "tooltip": "Specify a unique identifier within the external data source based on which you want to retrieve IP list from Illumio."
+        },
+        {
+          "title": "Limit",
+          "description": "Maximum number of IP list that this operation should return from Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "max_results",
+          "tooltip": "Maximum number of IP list that this operation should return from Illumio."
+        },
+        {
+          "title": "Additional Properties",
+          "description": "Additional fields, in the JSON format, based on which you want to retrieve details from Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "additional_properties",
+          "tooltip": "Additional fields, in the JSON format, based on which you want to retrieve details from Illumio.",
+          "value": {
+            "external_data_set": "",
+            "fqdn": "",
+            "ip_address": "",
+            "name": ""
+          }
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_ip_list_by_id",
+      "title": "Get IP List by ID",
+      "description": "Retrieve a specific IP list details from Illumio based on the organization ID, security policy version, and IP list ID that you have specified.",
+      "category": "investigation",
+      "annotation": "get_ip_list_by_id",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve IP list details from Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to retrieve IP list details from Illumio."
+        },
+        {
+          "title": "Security Policy Version",
+          "description": "Specify the security policy version based on which you want to retrieve IP list details from Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pversion",
+          "tooltip": "Specify the security policy version based on which you want to retrieve IP list details from Illumio."
+        },
+        {
+          "title": "IP List ID",
+          "name": "ip_list_id",
+          "description": "Specify the ID of the IP list based on which you want to retrieve details from Illumio.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the IP list based on which you want to retrieve details from Illumio."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "update_ip_list",
+      "title": "Update IP List",
+      "description": "Updates an IP list in Illumio based on the organization ID, security policy version, IP list ID, and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "update_ip_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to update IP list in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to update IP list in Illumio."
+        },
+        {
+          "title": "Security Policy Version",
+          "description": "Specify the security policy version based on which you want to update IP list in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pversion",
+          "tooltip": "Specify the security policy version based on which you want to update IP list in Illumio."
+        },
+        {
+          "title": "IP List ID",
+          "description": "Specify the ID of the IP list which you want to update details in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ip_list_id",
+          "tooltip": "Specify the ID of the IP list which you want to update details in Illumio."
+        },
+        {
+          "title": "IP Ranges",
+          "description": "Specify the IP addresses or ranges, in the JSON format, based on which you want to update IP list in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "ip_ranges",
+          "tooltip": "Specify the IP addresses or ranges, in the JSON format, based on which you want to update IP list in Illumio",
+          "value": [
+            {
+              "from_ip": "required",
+              "description": "",
+              "to_ip": "",
+              "exclusion": ""
+            }
+          ]
+        },
+        {
+          "title": "Fully Qualified Domain Name (FQDN)",
+          "description": "Specify the fully qualified domain name (FQDN), in the JSON format, based on which you want to update IP list in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "fqdns",
+          "tooltip": "Specify the fully qualified domain name (FQDN), in the JSON format, based on which you want to update IP list in Illumio",
+          "value": [
+            {
+              "fqdn": "required",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "title": "Description",
+          "description": "Specify the description based on which you want to update IP list in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "description",
+          "tooltip": "Specify the description based on which you want to update IP list in Illumio."
+        },
+        {
+          "title": "Additional Properties",
+          "description": "Additional fields, in the JSON format, based on which you want to update details in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "additional_properties",
+          "tooltip": "Additional fields, in the JSON format, based on which you want to update details in Illumio.",
+          "value": {
+            "name": "",
+            "external_data_set": "",
+            "external_data_reference": ""
+          }
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "delete_ip_list",
+      "title": "Delete IP List",
+      "description": "Delete an IP list in Illumio based on the organization ID, security policy version, and IP list ID that you have specified.",
+      "category": "investigation",
+      "annotation": "delete_ip_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to delete IP list in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to delete IP list in Illumio."
+        },
+        {
+          "title": "Security Policy Version",
+          "description": "Specify the security policy version based on which you want to delete IP list in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pversion",
+          "tooltip": "Specify the security policy version based on which you want to delete IP list in Illumio."
+        },
+        {
+          "title": "IP List ID",
+          "description": "Specify the ID of the IP list which you want to delete in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ip_list_id",
+          "tooltip": "Specify the ID of the IP list which you want to delete in Illumio."
+        }
+      ],
+      "output_schema": {
+      }
+    },
+    {
+      "operation": "create_label",
+      "title": "Create Label",
+      "description": "Creates an label in Illumio based on the organization ID, and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "create_label",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to create label in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to create label in Illumio."
+        },
+        {
+          "title": "Label Key",
+          "description": "Specify the label key based on which you want to create label in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "key",
+          "tooltip": "Specify the label key based on which you want to create label in Illumio."
+        },
+        {
+          "title": "Label Value",
+          "description": "Specify the label value based on which you want to create label in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "value",
+          "tooltip": "Specify the label value based on which you want to create label in Illumio."
+        },
+        {
+          "title": "External Data Set",
+          "description": "Specify the external data set identifier based on which you want to create label in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "external_data_set",
+          "tooltip": "Specify the external data set identifier based on which you want to create label in Illumio."
+        },
+        {
+          "title": "External Data Reference",
+          "description": "Specify the external data reference identifier based on which you want to create label in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": " external_data_reference",
+          "tooltip": "Specify the external data reference identifier based on which you want to create label in Illumio."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_labels",
+      "title": "Get Labels",
+      "description": "Retrieve a labels from Illumio based on the organization ID, and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_labels",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve labels from Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to retrieve labels from Illumio."
+        },
+        {
+          "title": "Include Deleted",
+          "description": "Select the option, if you want to include deleted labels in the records from Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "include_deleted",
+          "tooltip": "Select the option, if you want to include deleted labels in the records from Illumio."
+        },
+        {
+          "title": "External Data Reference",
+          "description": "Specify a unique identifier within the external data source based on which you want to retrieve labels from Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "external_data_reference",
+          "tooltip": "Specify a unique identifier within the external data source based on which you want to retrieve labels from Illumio."
+        },
+        {
+          "title": "Limit",
+          "description": "Maximum number of labels that this operation should return from Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "max_results",
+          "tooltip": "Maximum number of labels that this operation should return from Illumio."
+        },
+        {
+          "title": "Additional Properties",
+          "description": "Additional fields, in the JSON format, based on which you want to retrieve labels from Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "additional_properties",
+          "tooltip": "Additional fields, in the JSON format, based on which you want to retrieve labels from Illumio.",
+          "value": {
+            "external_data_set": "",
+            "key": "",
+            "value": "",
+            "usage": ""
+          }
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "get_label_by_id",
+      "title": "Get Label by ID",
+      "description": "Retrieve a specific label details from Illumio based on the organization ID, label ID, and other input parameter that you have specified.",
+      "category": "investigation",
+      "annotation": "get_label_by_id",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve label details from Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to retrieve label details from Illumio."
+        },
+        {
+          "title": "Label ID",
+          "name": "label_id",
+          "description": "Specify the ID of the label based on which you want to retrieve details from Illumio.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the label based on which you want to retrieve details from Illumio."
+        },
+        {
+          "title": "Include Label Usage Flag",
+          "name": "usage",
+          "description": "",
+          "type": "checkbox",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": ""
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "update_label",
+      "title": "Update Label",
+      "description": "Updates an label in Illumio based on the organization ID, label ID, and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "update_label",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to update label in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to update label in Illumio."
+        },
+        {
+          "title": "Label ID",
+          "description": "Specify the ID of the label which you want to update details in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "label_id",
+          "tooltip": "Specify the ID of the label which you want to update details in Illumio."
+        },
+        {
+          "title": "Label Value",
+          "description": "Specify the label value based on which you want to update label in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "value",
+          "tooltip": "Specify the label value based on which you want to update label in Illumio."
+        },
+        {
+          "title": "External Data Set",
+          "description": "Specify the external data set identifier based on which you want to update label in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "external_data_set",
+          "tooltip": "Specify the external data set identifier based on which you want to update label in Illumio."
+        },
+        {
+          "title": "External Data Reference",
+          "description": "Specify the external data reference identifier based on which you want to update label in Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "external_data_reference",
+          "tooltip": "Specify the external data reference identifier based on which you want to update label in Illumio."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "delete_label",
+      "title": "Delete Label",
+      "description": "Delete an label in Illumio based on the organization ID and label ID that you have specified.",
+      "category": "investigation",
+      "annotation": "delete_label",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to delete label in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to delete label in Illumio."
+        },
+        {
+          "title": "Label ID",
+          "description": "Specify the ID of the label which you want to delete in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "label_id",
+          "tooltip": "Specify the ID of the label which you want to delete in Illumio."
+        }
+      ],
+      "output_schema": {
+      }
+    },
+    {
+      "operation": "get_pending_security_policy",
+      "title": "Get Pending Security Policy",
+      "description": "Retrieve a pending security policy from Illumio based on the organization ID, and other input parameter that you have specified.",
+      "category": "investigation",
+      "annotation": "get_pending_security_policy",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to retrieve pending security policy from Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to retrieve pending security policy from Illumio."
+        },
+        {
+          "title": "Limit",
+          "description": "Maximum number of pending security policy that this operation should return from Illumio.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "max_results",
+          "tooltip": "Maximum number of pending security policy that this operation should return from Illumio."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "revert_pending_uncommitted_security_policy_list",
+      "title": "Revert Pending Uncommitted Security Policy List",
+      "description": "Revert the collection of pending uncommitted security policy objects in Illumio based on the organization ID you have specified.",
+      "category": "investigation",
+      "annotation": "revert_pending_uncommitted_security_policy_list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to revert pending uncommitted security policy in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to revert pending uncommitted security policy in Illumio."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "restore_previous_security_policy",
+      "title": "Restore Previous Security Policy",
+      "description": "Restore previous security policy in Illumio based on the organization ID and security policy version you have specified.",
+      "category": "investigation",
+      "annotation": "restore_previous_security_policy",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the ID of the organization based on which you want to restore previous security policy in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "org_id",
+          "tooltip": "Specify the ID of the organization based on which you want to restore previous security policy in Illumio."
+        },
+        {
+          "title": "Security Policy Version",
+          "description": "Specify the security policy version based on which you want to restore previous security policy in Illumio.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pversion",
+          "tooltip": "Specify the security policy version based on which you want to restore previous security policy in Illumio."
+        }
+      ],
+      "output_schema": {}
+    },
+    {
+      "operation": "send_custom_request",
+      "title": "Execute an API Call",
+      "annotation": "send_custom_request",
+      "description": "Sends an API request to any API endpoint based on specified HTTP method, endpoint, and other input parameters that you have specified, enabling flexible API interactions tailored to user needs. ",
+      "category": "investigation",
+      "visible": true,
+      "enabled": true,
+      "parameters": [
+        {
+          "name": "method",
+          "title": "HTTP Method",
+          "type": "select",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "description": "Select an HTTP action for the request. You can select from the following options:  \n\nDELETE \n\nGET \n\nPATCH \n\nPOST \n\nPUT ",
+          "options": [
+            "DELETE",
+            "GET",
+            "PATCH",
+            "POST",
+            "PUT"
+          ]
+        },
+        {
+          "title": "Endpoint",
+          "name": "endpoint",
+          "tooltip": "Specify the target API URL path for example: Alerts/search. Do not include /api/v2/",
+          "description": "Specify the target API URL path for the request. \nFor example, if the website is \"https://example.com \" and URL path is \"/images/pic.jpg\". The endpoint would be \"/images/pic.jpg\". ",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "placeholder": "For e.g /health"
+        },
+        {
+          "title": "Query Parameters",
+          "name": "query_params",
+          "description": "(Optional) Specify any optional parameters to add to the URL and refine the request. ",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "name": "payload",
+          "title": "Request Payload",
+          "type": "json",
+          "editable": true,
+          "visible": true,
+          "required": false,
+          "description": "(Optional) Specify data, as JSON, to be sent as the request payload (typically for POST or PUT requests). "
+        }
+      ],
+      "output_schema": {}
+    }
+  ]
+}

@@ -1,0 +1,1538 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "9a91e7d3-db70-4528-a928-1ccadccb4433",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "bae3a0f9-8810-4625-93e3-b007c58a0ade",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "9174ef77-7196-4aab-8050-34e0721dfba1",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "2ae334b0-959a-4bc8-aaaf-50c01bad2871",
+              "@type": "WorkflowStep",
+              "name": "Create Workload",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "name": "",
+                  "description": "",
+                  "hostname": "",
+                  "service_principal_name": "",
+                  "public_ip": "",
+                  "additional_properties": {
+                    "external_data_set": "",
+                    "external_data_reference": "",
+                    "agent_to_pce_certificate_authentication_id": "",
+                    "distinguished_name": ""
+                  }
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "create_workload",
+                "operationTitle": "Create Workload"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Creates an workload in Illumio based on the organization ID, workload name, and other input parameters that you have specified.",
+          "name": "Create Workload",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9174ef77-7196-4aab-8050-34e0721dfba1",
+          "routes": [
+            {
+              "uuid": "4f1b2d98-5524-498b-9e07-aa618e6ef4c2",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Workload",
+              "sourceStep": "/api/3/workflow_steps/9174ef77-7196-4aab-8050-34e0721dfba1",
+              "targetStep": "/api/3/workflow_steps/2ae334b0-959a-4bc8-aaaf-50c01bad2871"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2eddaa6e-7ce7-49dd-aba7-09ff86483046",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "90f82041-cab5-422d-b87d-5a884538381b",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "76090ed3-6e3f-49ba-9392-0bdc28e67195",
+              "@type": "WorkflowStep",
+              "name": "Get Workloads",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "enforcement_mode": "",
+                  "include_deleted": "",
+                  "security_policy_sync_state": "",
+                  "security_policy_update_mode": "",
+                  "visibility_level": "",
+                  "policy_health": "",
+                  "max_results": "",
+                  "additional_properties": {
+                    "container_clusters": "",
+                    "description": "",
+                    "external_data_reference": "",
+                    "external_data_set": "",
+                    "hostname": "",
+                    "ip_address": ""
+                  }
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "get_workloads",
+                "operationTitle": "Get Workloads"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieve a list of workloads from Illumio based on the organization ID and other input parameters you have specified.",
+          "name": "Get Workloads",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/90f82041-cab5-422d-b87d-5a884538381b",
+          "routes": [
+            {
+              "uuid": "37243149-86b6-41f8-bc74-b39c14ff6cf3",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Workloads",
+              "sourceStep": "/api/3/workflow_steps/90f82041-cab5-422d-b87d-5a884538381b",
+              "targetStep": "/api/3/workflow_steps/76090ed3-6e3f-49ba-9392-0bdc28e67195"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "0fc5f61f-d6bf-4fec-9c16-eeba3341050d",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "461de37b-58af-4fa0-b859-57dfd353c6c9",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "10374220-8993-4804-95a8-5b0a0787cb55",
+              "@type": "WorkflowStep",
+              "name": "Get Workload by ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "workload_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "get_workload_by_id",
+                "operationTitle": "Get Workload by ID"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves a specific workload from Illumio based on the organization ID and workload ID that you have specified.",
+          "name": "Get Workload by ID",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/461de37b-58af-4fa0-b859-57dfd353c6c9",
+          "routes": [
+            {
+              "uuid": "08d87f5a-64b6-4040-bd07-00c48b737b10",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Workload by ID",
+              "sourceStep": "/api/3/workflow_steps/461de37b-58af-4fa0-b859-57dfd353c6c9",
+              "targetStep": "/api/3/workflow_steps/10374220-8993-4804-95a8-5b0a0787cb55"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "1b9968a8-e534-4a84-a3d5-b434d3841443",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "42e07632-2b99-4304-9f37-c66075a67968",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "532ec788-5d5d-4f5f-83ac-608ca5be2a4d",
+              "@type": "WorkflowStep",
+              "name": "Update Workload",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "workload_id": "",
+                  "name": "",
+                  "description": "",
+                  "service_provider": "",
+                  "enforcement_mode": "",
+                  "additional_properties": {
+                    "labels": [],
+                    "service_provider": ""
+                  }
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "update_workload",
+                "operationTitle": "Update Workload"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Updates an workload in Illumio based on the organization ID, workload ID, and other input parameters that you have specified.",
+          "name": "Update Workload",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/42e07632-2b99-4304-9f37-c66075a67968",
+          "routes": [
+            {
+              "uuid": "b72a9278-2288-4e1b-bf92-244a7f603ec2",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Workload",
+              "sourceStep": "/api/3/workflow_steps/42e07632-2b99-4304-9f37-c66075a67968",
+              "targetStep": "/api/3/workflow_steps/532ec788-5d5d-4f5f-83ac-608ca5be2a4d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "12fac57b-0463-4654-a2ec-ff586640e88a",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "3a19754c-c89c-4638-8e77-17b3a4f1de31",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "2bbd8bdc-7abd-4820-8026-dbe4a9936c76",
+              "@type": "WorkflowStep",
+              "name": "Delete Workload",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "workload_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "delete_workload",
+                "operationTitle": "Delete Workload"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Delete an workload in Illumio based on the organization ID and workload ID that you have specified.",
+          "name": "Delete Workload",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3a19754c-c89c-4638-8e77-17b3a4f1de31",
+          "routes": [
+            {
+              "uuid": "b729ced3-7a2e-4421-ab1f-d07716bda838",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Workload",
+              "sourceStep": "/api/3/workflow_steps/3a19754c-c89c-4638-8e77-17b3a4f1de31",
+              "targetStep": "/api/3/workflow_steps/2bbd8bdc-7abd-4820-8026-dbe4a9936c76"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "683b707b-1025-428f-b85c-630afc1aedde",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "b875c72a-06dc-4de7-a1d4-5dbd0435c8bc",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "d8022dcb-4ba2-4935-b517-e172d93901a5",
+              "@type": "WorkflowStep",
+              "name": "Get Ransomware Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "workload_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "get_ransomware_details",
+                "operationTitle": "Get Ransomware Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieve a specific ransomware details for the workload from Illumio based on the organization ID and workload ID that you have specified.",
+          "name": "Get Ransomware Details",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b875c72a-06dc-4de7-a1d4-5dbd0435c8bc",
+          "routes": [
+            {
+              "uuid": "f6f27016-f13b-482b-8d5c-7143b42dbb49",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Ransomware Details",
+              "sourceStep": "/api/3/workflow_steps/b875c72a-06dc-4de7-a1d4-5dbd0435c8bc",
+              "targetStep": "/api/3/workflow_steps/d8022dcb-4ba2-4935-b517-e172d93901a5"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "339ab9b5-67d8-466b-813b-0ad557086f5f",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "7e2c32a6-b7a1-48f6-a9e2-8f1d4b12ff20",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "37e6847f-e35e-4074-b977-e39efbaf004e",
+              "@type": "WorkflowStep",
+              "name": "Create IP List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "pversion": "",
+                  "name": "",
+                  "ip_ranges": [
+                    {
+                      "from_ip": "required",
+                      "description": "",
+                      "to_ip": "",
+                      "exclusion": ""
+                    }
+                  ],
+                  "fqdns": [
+                    {
+                      "fqdn": "required",
+                      "description": ""
+                    }
+                  ],
+                  "description": "",
+                  "additional_properties": {
+                    "external_data_set": "",
+                    "external_data_reference": ""
+                  }
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "create_ip_list",
+                "operationTitle": "Create IP List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Creates an IP list in Illumio based on the organization ID, security policy version, IP list name, and other input parameters you have specified.",
+          "name": "Create IP List",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7e2c32a6-b7a1-48f6-a9e2-8f1d4b12ff20",
+          "routes": [
+            {
+              "uuid": "bf35e859-fe33-4d73-a7bd-6554540223c9",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create IP List",
+              "sourceStep": "/api/3/workflow_steps/7e2c32a6-b7a1-48f6-a9e2-8f1d4b12ff20",
+              "targetStep": "/api/3/workflow_steps/37e6847f-e35e-4074-b977-e39efbaf004e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "91277607-4ea8-4251-b766-0e74075512cb",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "1144e7ef-9e6f-4360-a1d2-0e8619ca0abc",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "a8c02291-0474-45be-9221-b09739e785a4",
+              "@type": "WorkflowStep",
+              "name": "Get IP List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "pversion": "",
+                  "description": "",
+                  "external_data_reference": "",
+                  "max_results": "",
+                  "additional_properties": {
+                    "external_data_set": "",
+                    "fqdn": "",
+                    "ip_address": "",
+                    "name": ""
+                  }
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "get_ip_list",
+                "operationTitle": "Get IP List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieve a IP list from Illumio based on the organization ID, security policy version, and other input parameters you have specified.",
+          "name": "Get IP List",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1144e7ef-9e6f-4360-a1d2-0e8619ca0abc",
+          "routes": [
+            {
+              "uuid": "3098fa65-2400-463f-9e3d-a46cdc9dd0c2",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get IP List",
+              "sourceStep": "/api/3/workflow_steps/1144e7ef-9e6f-4360-a1d2-0e8619ca0abc",
+              "targetStep": "/api/3/workflow_steps/a8c02291-0474-45be-9221-b09739e785a4"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "61ac841f-1772-4fea-b155-f64d32057c2e",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "85ecdbb9-fa57-49e3-bc77-fb4dd8608f28",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "8cb75ef4-01fb-48d4-96a0-add6db212e37",
+              "@type": "WorkflowStep",
+              "name": "Get IP List by ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "pversion": "",
+                  "ip_list_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "get_ip_list_by_id",
+                "operationTitle": "Get IP List by ID"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieve a specific IP list details from Illumio based on the organization ID, security policy version, and IP list ID that you have specified.",
+          "name": "Get IP List by ID",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/85ecdbb9-fa57-49e3-bc77-fb4dd8608f28",
+          "routes": [
+            {
+              "uuid": "e2a919f1-c0f8-4b93-9c5a-0fa7ba2c61d8",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get IP List by ID",
+              "sourceStep": "/api/3/workflow_steps/85ecdbb9-fa57-49e3-bc77-fb4dd8608f28",
+              "targetStep": "/api/3/workflow_steps/8cb75ef4-01fb-48d4-96a0-add6db212e37"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "acd1883f-75bc-4c1f-8317-0f6fc4cd273f",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "4d8d8f3b-c53e-4c2e-b249-d3b85dd592b8",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "e37c7dcc-4293-4609-a06a-a28b5ec56f61",
+              "@type": "WorkflowStep",
+              "name": "Update IP List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "pversion": "",
+                  "ip_list_id": "",
+                  "ip_ranges": [
+                    {
+                      "from_ip": "required",
+                      "description": "",
+                      "to_ip": "",
+                      "exclusion": ""
+                    }
+                  ],
+                  "fqdns": [
+                    {
+                      "fqdn": "required",
+                      "description": ""
+                    }
+                  ],
+                  "description": "",
+                  "additional_properties": {
+                    "name": "",
+                    "external_data_set": "",
+                    "external_data_reference": ""
+                  }
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "update_ip_list",
+                "operationTitle": "Update IP List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Updates an IP list in Illumio based on the organization ID, security policy version, IP list ID, and other input parameters you have specified.",
+          "name": "Update IP List",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4d8d8f3b-c53e-4c2e-b249-d3b85dd592b8",
+          "routes": [
+            {
+              "uuid": "89802d66-2f3a-4820-bd4d-82479cec87a1",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update IP List",
+              "sourceStep": "/api/3/workflow_steps/4d8d8f3b-c53e-4c2e-b249-d3b85dd592b8",
+              "targetStep": "/api/3/workflow_steps/e37c7dcc-4293-4609-a06a-a28b5ec56f61"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ee8b8ae7-5af2-4870-a592-8c3b61f25825",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "b6a8e4b2-1467-4401-ba51-b3694fce0e1a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "d99fd563-a102-47ce-85a0-769c20ecd456",
+              "@type": "WorkflowStep",
+              "name": "Delete IP List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "pversion": "",
+                  "ip_list_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "delete_ip_list",
+                "operationTitle": "Delete IP List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Delete an IP list in Illumio based on the organization ID, security policy version, and IP list ID that you have specified.",
+          "name": "Delete IP List",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b6a8e4b2-1467-4401-ba51-b3694fce0e1a",
+          "routes": [
+            {
+              "uuid": "3c2200f4-aeaf-49af-acec-f912a71a90c2",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete IP List",
+              "sourceStep": "/api/3/workflow_steps/b6a8e4b2-1467-4401-ba51-b3694fce0e1a",
+              "targetStep": "/api/3/workflow_steps/d99fd563-a102-47ce-85a0-769c20ecd456"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "268b1cd1-0b53-44fb-8220-74c7c7f4f883",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "1453fb76-9937-4dcf-b0a6-06adc0bcc71e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "f2eddec2-c644-4f4c-92f5-a32b60575f55",
+              "@type": "WorkflowStep",
+              "name": "Create Label",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "key": "",
+                  "value": "",
+                  "external_data_set": "",
+                  " external_data_reference": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "create_label",
+                "operationTitle": "Create Label"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Creates an label in Illumio based on the organization ID, and other input parameters you have specified.",
+          "name": "Create Label",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1453fb76-9937-4dcf-b0a6-06adc0bcc71e",
+          "routes": [
+            {
+              "uuid": "1ab12b8f-a717-4bd0-93c8-b171e949655a",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Label",
+              "sourceStep": "/api/3/workflow_steps/1453fb76-9937-4dcf-b0a6-06adc0bcc71e",
+              "targetStep": "/api/3/workflow_steps/f2eddec2-c644-4f4c-92f5-a32b60575f55"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d95bf713-a243-4437-9a71-a78bffd2f5a6",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "0b0132cf-96aa-44bc-9678-5d8ffc3abee5",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "66146099-a969-47aa-94e7-6eab93a9afa5",
+              "@type": "WorkflowStep",
+              "name": "Get Labels",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "include_deleted": "",
+                  "external_data_reference": "",
+                  "max_results": "",
+                  "additional_properties": {
+                    "external_data_set": "",
+                    "key": "",
+                    "value": "",
+                    "usage": ""
+                  }
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "get_labels",
+                "operationTitle": "Get Labels"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieve a labels from Illumio based on the organization ID, and other input parameters you have specified.",
+          "name": "Get Labels",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0b0132cf-96aa-44bc-9678-5d8ffc3abee5",
+          "routes": [
+            {
+              "uuid": "fd6d3a60-8c15-4ce4-aa48-520a8b5b82bf",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Labels",
+              "sourceStep": "/api/3/workflow_steps/0b0132cf-96aa-44bc-9678-5d8ffc3abee5",
+              "targetStep": "/api/3/workflow_steps/66146099-a969-47aa-94e7-6eab93a9afa5"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "fe4cd698-eb82-4dda-a0c3-b2cb6cd9cb83",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "805d4042-4d18-4929-a62f-92ac129ed924",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "44a0943c-d1e9-4814-acce-95cd2009ef46",
+              "@type": "WorkflowStep",
+              "name": "Get Label by ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "label_id": "",
+                  "usage": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "get_label_by_id",
+                "operationTitle": "Get Label by ID"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieve a specific label details from Illumio based on the organization ID, label ID, and other input parameter that you have specified.",
+          "name": "Get Label by ID",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/805d4042-4d18-4929-a62f-92ac129ed924",
+          "routes": [
+            {
+              "uuid": "9781f58a-b988-42c3-b3d1-62cdb4310491",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Label by ID",
+              "sourceStep": "/api/3/workflow_steps/805d4042-4d18-4929-a62f-92ac129ed924",
+              "targetStep": "/api/3/workflow_steps/44a0943c-d1e9-4814-acce-95cd2009ef46"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "70349bcc-b566-4f09-bdbd-7a36e198b61f",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "f5106019-9274-4cd0-9e02-d09c2033e8b6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "1010d125-f22c-48c1-9a91-6cf0660cb741",
+              "@type": "WorkflowStep",
+              "name": "Update Label",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "label_id": "",
+                  "value": "",
+                  "external_data_set": "",
+                  "external_data_reference": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "update_label",
+                "operationTitle": "Update Label"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Updates an label in Illumio based on the organization ID, label ID, and other input parameters you have specified.",
+          "name": "Update Label",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f5106019-9274-4cd0-9e02-d09c2033e8b6",
+          "routes": [
+            {
+              "uuid": "eb4e1867-8b3d-45d6-a822-242bf265f8fe",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Label",
+              "sourceStep": "/api/3/workflow_steps/f5106019-9274-4cd0-9e02-d09c2033e8b6",
+              "targetStep": "/api/3/workflow_steps/1010d125-f22c-48c1-9a91-6cf0660cb741"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "b0bd17bc-2aff-46e7-beb4-ba07d340e29e",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "1eb399dc-c152-417b-ad31-d6411ee70031",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "31a1eee8-6072-40f3-a89d-d4298cb70696",
+              "@type": "WorkflowStep",
+              "name": "Delete Label",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "label_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "delete_label",
+                "operationTitle": "Delete Label"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Delete an label in Illumio based on the organization ID and label ID that you have specified.",
+          "name": "Delete Label",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1eb399dc-c152-417b-ad31-d6411ee70031",
+          "routes": [
+            {
+              "uuid": "ab80502f-967a-4971-9b8e-66f084260f3d",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Label",
+              "sourceStep": "/api/3/workflow_steps/1eb399dc-c152-417b-ad31-d6411ee70031",
+              "targetStep": "/api/3/workflow_steps/31a1eee8-6072-40f3-a89d-d4298cb70696"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9e893ed6-1889-47f9-8c7b-26f1aa0e9c47",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "99b34cbc-0fce-4e8b-bad6-5dbead28e2d6",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "24dcb1de-e144-4767-a360-8c47c605888a",
+              "@type": "WorkflowStep",
+              "name": "Get Pending Security Policy",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "max_results": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "get_pending_security_policy",
+                "operationTitle": "Get Pending Security Policy"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieve a pending security policy from Illumio based on the organization ID, and other input parameter that you have specified.",
+          "name": "Get Pending Security Policy",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/99b34cbc-0fce-4e8b-bad6-5dbead28e2d6",
+          "routes": [
+            {
+              "uuid": "2a54a28d-f050-4564-bfbb-9ee8ce4fc499",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Pending Security Policy",
+              "sourceStep": "/api/3/workflow_steps/99b34cbc-0fce-4e8b-bad6-5dbead28e2d6",
+              "targetStep": "/api/3/workflow_steps/24dcb1de-e144-4767-a360-8c47c605888a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d34d5f58-ad5c-4701-9a47-caa02f22b66e",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "2ffa34df-3bc0-497a-b72e-b21905a1073a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "4d0d447a-cff7-4fa6-a065-dc094a63178f",
+              "@type": "WorkflowStep",
+              "name": "Revert Pending Uncommitted Security Policy List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "revert_pending_uncommitted_security_policy_list",
+                "operationTitle": "Revert Pending Uncommitted Security Policy List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Revert the collection of pending uncommitted security policy objects in Illumio based on the organization ID you have specified.",
+          "name": "Revert Pending Uncommitted Security Policy List",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2ffa34df-3bc0-497a-b72e-b21905a1073a",
+          "routes": [
+            {
+              "uuid": "b7dd498e-d1a1-4c3f-b650-bec657a8116c",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Revert Pending Uncommitted Security Policy List",
+              "sourceStep": "/api/3/workflow_steps/2ffa34df-3bc0-497a-b72e-b21905a1073a",
+              "targetStep": "/api/3/workflow_steps/4d0d447a-cff7-4fa6-a065-dc094a63178f"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d7fae5f4-21b3-485a-b525-68c5bd94b529",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "2fad5621-9fe8-41b8-aa96-f6ef84748623",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "62d9dd14-287d-49e6-9034-fff443c01ea4",
+              "@type": "WorkflowStep",
+              "name": "Restore Previous Security Policy",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "org_id": "",
+                  "pversion": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "restore_previous_security_policy",
+                "operationTitle": "Restore Previous Security Policy"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Restore previous security policy in Illumio based on the organization ID and security policy version you have specified.",
+          "name": "Restore Previous Security Policy",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2fad5621-9fe8-41b8-aa96-f6ef84748623",
+          "routes": [
+            {
+              "uuid": "64a7b4f6-0f4f-467b-b7ad-3a874ba69078",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Restore Previous Security Policy",
+              "sourceStep": "/api/3/workflow_steps/2fad5621-9fe8-41b8-aa96-f6ef84748623",
+              "targetStep": "/api/3/workflow_steps/62d9dd14-287d-49e6-9034-fff443c01ea4"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "df079bb8-6396-4360-b78e-91030da2343e",
+          "collection": "/api/3/workflow_collections/9a91e7d3-db70-4528-a928-1ccadccb4433",
+          "steps": [
+            {
+              "uuid": "c360235d-d9f1-4604-8b50-7b7c130922e9",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "6e8dd86f-c537-422a-a1be-f960f06c879e",
+              "@type": "WorkflowStep",
+              "name": "Execute an API Call",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Illumio Core",
+                "config": "''",
+                "params": {
+                  "method": "",
+                  "endpoint": "",
+                  "query_params": "",
+                  "payload": ""
+                },
+                "version": "1.0.0",
+                "connector": "illumio-core",
+                "operation": "send_custom_request",
+                "operationTitle": "Execute an API Call"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Sends an API request to any API endpoint based on specified HTTP method, endpoint, and other input parameters that you have specified, enabling flexible API interactions tailored to user needs. ",
+          "name": "Execute an API Call",
+          "tag": "#Illumio Core",
+          "recordTags": [
+            "Illumio",
+            "illumio-core"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c360235d-d9f1-4604-8b50-7b7c130922e9",
+          "routes": [
+            {
+              "uuid": "0d07b252-7ffb-4498-8537-efffb6e62b3f",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Execute an API Call",
+              "sourceStep": "/api/3/workflow_steps/c360235d-d9f1-4604-8b50-7b7c130922e9",
+              "targetStep": "/api/3/workflow_steps/6e8dd86f-c537-422a-a1be-f960f06c879e"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - Illumio Core - 1.0.0",
+      "description": "Illumio is a cybersecurity company that specializes in micro-segmentation and zero-trust security solutions for data centers and cloud environments. It provides a platform designed to help organizations protect their critical applications and data by creating secure zones and controlling access between workloads, regardless of whether those workloads are on-premises or in the cloud.",
+      "visible": true,
+      "recordTags": [
+        "Illumio",
+        "illumio-core"
+      ]
+    }
+  ]
+}
