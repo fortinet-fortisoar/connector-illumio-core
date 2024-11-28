@@ -2,7 +2,7 @@
   "name": "illumio-core",
   "version": "1.0.0",
   "label": "Illumio Core",
-  "description": "Illumio is a cybersecurity company that specializes in micro-segmentation and zero-trust security solutions for data centers and cloud environments. It provides a platform designed to help organizations protect their critical applications and data by creating secure zones and controlling access between workloads, regardless of whether those workloads are on-premises or in the cloud.",
+  "description": "Illumio that provides a platform designed to help organizations protect their critical applications and data by creating secure zones and controlling access between workloads, regardless of whether those workloads are on-premises or in the cloud. This connector facilitates automated operations related to workloads, IP list and labels.",
   "publisher": "Fortinet",
   "cs_approved": false,
   "cs_compatible": true,
