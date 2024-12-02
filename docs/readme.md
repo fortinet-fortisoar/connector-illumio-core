@@ -231,7 +231,7 @@ The following automated operations can be included in playbooks and you can also
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Organization ID</td><td>Specify the ID of the organization based on which you want to retrieve label details from Illumio.
 </td></tr><tr><td>Label ID</td><td>Specify the ID of the label based on which you want to retrieve details from Illumio.
-</td></tr><tr><td>Include Label Usage Flag</td><td>
+</td></tr><tr><td>Include Label Usage Flag</td><td>Select the option, if you want to include label usage flag in the records from Illumio.
 </td></tr></tbody></table>
 
 #### Output

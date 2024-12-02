@@ -985,12 +985,12 @@
         {
           "title": "Include Label Usage Flag",
           "name": "usage",
-          "description": "",
+          "description": "Select the option, if you want to include label usage flag in the records from Illumio.",
           "type": "checkbox",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": ""
+          "tooltip": "Select the option, if you want to include label usage flag in the records from Illumio."
         }
       ],
       "output_schema": {}
