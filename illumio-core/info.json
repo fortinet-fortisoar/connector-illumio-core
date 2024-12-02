@@ -7,7 +7,7 @@
   "cs_approved": false,
   "cs_compatible": true,
   "contributor": "",
-  "help_online": "",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-illumio-core/blob/release/1.0.0/docs/readme.md",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": [
@@ -985,12 +985,12 @@
         {
           "title": "Include Label Usage Flag",
           "name": "usage",
-          "description": "",
+          "description": "Select the option, if you want to include label usage flag in the records from Illumio.",
           "type": "checkbox",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": ""
+          "tooltip": "Select the option, if you want to include label usage flag in the records from Illumio."
         }
       ],
       "output_schema": {}
